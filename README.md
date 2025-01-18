@@ -70,4 +70,6 @@ This action returns the details of a specific product in a JSON format.
 
 - Ensure all NuGet dependencies are installed.
 
-- Run the application in Visual Studio or via the command line
+- Run the application in Visual Studio 22 or configure previous VS to support Framework 8
+
+- _Note:_ Make sure to run the app with http protocol instead of https

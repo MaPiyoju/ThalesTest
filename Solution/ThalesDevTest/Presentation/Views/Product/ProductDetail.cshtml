@@ -1,0 +1,56 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Product";
+}
+<a href="@Url.Action("Products", "Product")"><< Back</a>
+<h1>@ViewData["Title"]: @Model.id - @Model.title</h1>
+
+<div class="mb-3 d-inline-flex gap-1">
+    <div>
+        <label for="price" class="form-label">Price</label>
+        <input type="text" disabled class="form-control" id="price" value="@Model.price">
+    </div>
+    <div>
+        <label for="tax" class="form-label">Product Tax</label>
+        <input type="text" disabled class="form-control" id="tax" value="@Model.tax">
+    </div>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+    <textarea class="form-control" disabled id="exampleFormControlTextarea1" rows="3">@Model.description</textarea>
+</div>
+<div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <input type="text" disabled class="form-control" id="category" value="@Model.category.name">
+</div>
+<div class="mb-3 d-inline-flex gap-1">
+    <div>
+        <label for="creationAt" class="form-label">Creation date</label>
+        <input type="text" disabled class="form-control" id="createdAt" value="@Model.creationAt">
+    </div>
+    <div>
+        <label for="updatedAt" class="form-label">Update date</label>
+        <input type="text" disabled class="form-control" id="updatedAt" value="@Model.updatedAt">
+    </div>
+</div>
+<div class="mb-3">
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @foreach (var item in Model.images.Select((image, index) => new { image, index }))
+            {
+                <div class="carousel-item @(item.index == 0 ? "active" : "")">
+                    <img class="d-block w-100" src="@item.image" alt="Product image">
+                </div>
+            }
+        </div>
+        <a class="carousel-control-prev" href="#imageCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+        </a>
+        <a class="carousel-control-next" href="#imageCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+        </a>
+    </div>
+</div>

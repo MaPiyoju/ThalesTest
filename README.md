@@ -9,7 +9,8 @@ The `ProductController` is an ASP.NET MVC controller that manages interactions w
 ### Requirements
 
 - **ASP.NET Core MVC**
-- **ASP.NET Framework V8**
+- **ASP.NET Framework V8** [Link](https://dotnet.microsoft.com/es-es/download/dotnet/8.0)
+- **Visual Studio 2022 to support Framework V8** [Link](https://visualstudio.microsoft.com/es/vs/community/)
 - **C#**
 
 ### Controller Actions
